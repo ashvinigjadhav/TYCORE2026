@@ -436,6 +436,15 @@
         font-size: 20px;
       }
     }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.01; }
+    }
+
+    #meranaam {
+      color: #e60303;
+      animation: blink 0.5s infinite;
+    }
   </style>
 </head>
 <body>
@@ -449,6 +458,16 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+  <div id="meranaam" class="container" style="text-align: center; margin-bottom: 40px; ">
+  <h2>Warning!!!</h2>
+  <p>Malicious code detected. Do not run this code on your local machine.</p>
+  <H1>⚠️Suspects⚠️</H1>
+    <H1>Anonymous User</H1>
+    <H1>Unidentified User</H1>
+    <H1>User:Shlok</H1>
+    <H1>User:Swaraj</H1>
+    <h1>⚠️End of Warning⚠️</H1>
+</div>
 
   <section class="hero">
     <div>
@@ -462,6 +481,7 @@
     </div>
     <div class="hero-box"></div>
   </section>
+  
 
   <section id="features">
     <div class="section-title">
@@ -508,8 +528,7 @@
       <h3>Dashboard Layout</h3>
       <p>Navigation and content section with premium styling</p>
     </div>
-<div>
-    <H1>Swaraj Shelar ADT23SOCB1616</H1></div>
+
     <div class="dashboard">
       <aside class="sidebar">
         <ul>
