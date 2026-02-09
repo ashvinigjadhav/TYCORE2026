@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Coffee Shop</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/64c68421325373.562ff49fcb01d.png"
+                        alt="Logo" height="80px">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="auth-cart">
+                    <a href="SignUp.html" class="boxed">Sign Up</a>
+                    <a href="cart.html" class="boxed"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Cart Icon"
+                            class="cart-icon"> Cart</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="cart-section">
+        <h1>Your Cart</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                <tr>
+                    <td>Espresso</td>
+                    <td>
+                        <input type="number" value="1" min="1">
+                    </td>
+                    <td>₹3.00</td>
+                    <td>₹3.00</td>
+                    <td>
+                        <button>Remove</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Masala Chai</td>
+                    <td>
+                        <input type="number" value="1" min="1">
+                    </td>
+                    <td>₹50.00</td>
+                    <td>₹50.00</td>
+                    <td>
+                        <button>Remove</button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <div class="cart-summary">
+            <h3>Cart Summary</h3>
+            <p>Subtotal: ₹50.00</p>
+            <p>Tax: ₹5.00</p>
+            <p><strong>Total: ₹55.00</strong></p>
+            <button>Proceed to Checkout</button>
+        </div>
+    </div>
+</body>
+
+</html>

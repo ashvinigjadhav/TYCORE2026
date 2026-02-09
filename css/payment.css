@@ -1,0 +1,117 @@
+body {
+    font-family: var(--body-font);
+    background-color: var(--first-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.payment-section {
+    padding: 60px 0;
+    background-color: var(--first-color);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--title-color);
+    margin-bottom: 40px;
+    font-family: var(--second-font);
+}
+
+.container {
+    padding: 0 20px;
+}
+
+.payment-box {
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--title-color);
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--second-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.checkout-btn {
+    background-color: var(--second-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.checkout-btn:hover {
+    background-color: var(--first-color-light);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+
+    .payment-section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 8px;
+    }
+
+    .checkout-btn {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 6px;
+    }
+
+    .checkout-btn {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Coffee Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/64c68421325373.562ff49fcb01d.png"
+                        alt="Logo" height="80px">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="auth-cart">
+                    <a href="SignUp.html" class="boxed">Sign Up</a>
+                    <a href="cart.html" class="boxed"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Cart Icon"
+                            class="cart-icon"> Cart</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="menu-section">
+        <h1 class="section-title">Our Menu</h1>
+        <div class="menu-category">
+            <h2>Coffee</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="img/Expresso.png" alt="Espresso" class="menu-img">
+                    <h3 class="menu-item-title">Espresso</h3>
+                    <p class="menu-item-description">A strong and bold coffee shot.</p>
+                    <p class="menu-item-price">₹50</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'espresso', name: 'Espresso', price: 50, quantity: parseInt(this.previousElementSibling.value), image: 'img/Expresso.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/latte.png" alt="Latte" class="menu-img">
+                    <h3 class="menu-item-title">Latte</h3>
+                    <p class="menu-item-description">Espresso with steamed milk and a touch of foam.</p>
+                    <p class="menu-item-price">₹70</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'latte', name: 'Latte', price: 70, quantity: parseInt(this.previousElementSibling.value), image: 'img/latte.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/Cappuccino.png" alt="Cappuccino" class="menu-img">
+                    <h3 class="menu-item-title">Cappuccino</h3>
+                    <p class="menu-item-description">Espresso with equal parts steamed milk and foam.</p>
+                    <p class="menu-item-price">₹80</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'cappuccino', name: 'Cappuccino', price: 80, quantity: parseInt(this.previousElementSibling.value), image: 'img/Cappuccino.png'})">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h2>Tea</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="img/GreenTea.png" alt="Green Tea" class="menu-img">
+                    <h3 class="menu-item-title">Green Tea</h3>
+                    <p class="menu-item-description">Refreshing and healthy green tea.</p>
+                    <p class="menu-item-price">₹40</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'green-tea', name: 'Green Tea', price: 40, quantity: parseInt(this.previousElementSibling.value), image: 'img/GreenTea.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/Coffee_latte.png" alt="Chai Latte" class="menu-img">
+                    <h3 class="menu-item-title">Chai Latte</h3>
+                    <p class="menu-item-description">Spiced tea with steamed milk.</p>
+                    <p class="menu-item-price">₹60</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'chai-latte', name: 'Chai Latte', price: 60, quantity: parseInt(this.previousElementSibling.value), image: 'img/Coffee_latte.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/Herbal Tea.png" alt="Herbal Tea" class="menu-img">
+                    <h3 class="menu-item-title">Herbal Tea</h3>
+                    <p class="menu-item-description">Aromatic and caffeine-free herbal blends.</p>
+                    <p class="menu-item-price">₹50</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'herbal-tea', name: 'Herbal Tea', price: 50, quantity: parseInt(this.previousElementSibling.value), image: 'img/Herbal Tea.png'})">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h2>Pastries</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="img/Croissant.png" alt="Croissant" class="menu-img">
+                    <h3 class="menu-item-title">Croissant</h3>
+                    <p class="menu-item-description">Flaky and buttery French pastry.</p>
+                    <p class="menu-item-price">₹60</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'croissant', name: 'Croissant', price: 60, quantity: parseInt(this.previousElementSibling.value), image: 'img/Croissant.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/Muffin.png" alt="Muffin" class="menu-img">
+                    <h3 class="menu-item-title">Muffin</h3>
+                    <p class="menu-item-description">Soft and moist muffins in various flavors.</p>
+                    <p class="menu-item-price">₹50</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'muffin', name: 'Muffin', price: 50, quantity: parseInt(this.previousElementSibling.value), image: 'img/Muffin.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/Chocolate Cake.png" alt="Chocolate Cake" class="menu-img">
+                    <h3 class="menu-item-title">Chocolate Cake</h3>
+                    <p class="menu-item-description">Rich and decadent chocolate dessert.</p>
+                    <p class="menu-item-price">₹100</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'chocolate-cake', name: 'Chocolate Cake', price: 100, quantity: parseInt(this.previousElementSibling.value), image: 'img/Chocolate Cake.png'})">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h2>Chai</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="img/Masala Chai.png" alt="Masala Chai" class="menu-img">
+                    <h3 class="menu-item-title">Masala Chai</h3>
+                    <p class="menu-item-description">Traditional Indian spiced tea.</p>
+                    <p class="menu-item-price">₹30</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'masala-chai', name: 'Masala Chai', price: 30, quantity: parseInt(this.previousElementSibling.value), image: 'img/Masala Chai.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/GingerChai.png" alt="Ginger Chai" class="menu-img">
+                    <h3 class="menu-item-title">Ginger Chai</h3>
+                    <p class="menu-item-description">Refreshing tea with a hint of ginger.</p>
+                    <p class="menu-item-price">₹35</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'ginger-chai', name: 'Ginger Chai', price: 35, quantity: parseInt(this.previousElementSibling.value), image: 'img/GingerChai.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/Elaichi Chai.png" alt="Elaichi Chai" class="menu-img">
+                    <h3 class="menu-item-title">Elaichi Chai</h3>
+                    <p class="menu-item-description">Tea infused with aromatic cardamom.</p>
+                    <p class="menu-item-price">₹40</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'elaichi-chai', name: 'Elaichi Chai', price: 40, quantity: parseInt(this.previousElementSibling.value), image: 'img/Elaichi Chai.png'})">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h2>Snacks</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="img/Samosa.png" alt="Samosa" class="menu-img">
+                    <h3 class="menu-item-title">Samosa</h3>
+                    <p class="menu-item-description">Deep-fried pastry filled with spiced potatoes.</p>
+                    <p class="menu-item-price">₹20</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'samosa', name: 'Samosa', price: 20, quantity: parseInt(this.previousElementSibling.value), image: 'img/Samosa.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/Kachori.png" alt="Kachori" class="menu-img">
+                    <h3 class="menu-item-title">Kachori</h3>
+                    <p class="menu-item-description">Flaky pastry stuffed with lentils and spices.</p>
+                    <p class="menu-item-price">₹25</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'kachori', name: 'Kachori', price: 25, quantity: parseInt(this.previousElementSibling.value), image: 'img/Kachori.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/Bhaji.png" alt="Bhaji" class="menu-img">
+                    <h3 class="menu-item-title">Bhaji</h3>
+                    <p class="menu-item-description">Fritters made with vegetables and gram flour.</p>
+                    <p class="menu-item-price">₹30</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'bhaji', name: 'Bhaji', price: 30, quantity: parseInt(this.previousElementSibling.value), image: 'img/Bhaji.png'})">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h2>Cold Beverages</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="img/Masala Lemonade.png" alt="Masala Lemonade" class="menu-img">
+                    <h3 class="menu-item-title">Masala Lemonade</h3>
+                    <p class="menu-item-description">Refreshing lemonade with Indian spices.</p>
+                    <p class="menu-item-price">₹40</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'masala-lemonade', name: 'Masala Lemonade', price: 40, quantity: parseInt(this.previousElementSibling.value), image: 'img/Masala Lemonade.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/Sweet Lassi.png" alt="Sweet Lassi" class="menu-img">
+                    <h3 class="menu-item-title">Sweet Lassi</h3>
+                    <p class="menu-item-description">Traditional yogurt-based drink.</p>
+                    <p class="menu-item-price">₹50</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'sweet-lassi', name: 'Sweet Lassi', price: 50, quantity: parseInt(this.previousElementSibling.value), image: 'img/Sweet Lassi.png'})">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="img/Badam Milk.png" alt="Badam Milk" class="menu-img">
+                    <h3 class="menu-item-title">Badam Milk</h3>
+                    <p class="menu-item-description">Almond-flavored milk with saffron.</p>
+                    <p class="menu-item-price">₹60</p>
+                    <div class="quantity-container">
+                        <input type="number" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart" onclick="addToCart({id: 'badam-milk', name: 'Badam Milk', price: 60, quantity: parseInt(this.previousElementSibling.value), image: 'img/Badam Milk.png'})">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
