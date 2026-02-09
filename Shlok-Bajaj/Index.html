@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Complex HTML CSS Page</title>
+
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --secondary: #22c55e;
+      --bg: #f9fafb;
+      --dark: #111827;
+      --gray: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav h1 {
+      color: var(--primary);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 80px 40px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: var(--gray);
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .hero button:hover {
+      background: #4338ca;
+    }
+
+    .hero-box {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      height: 280px;
+      border-radius: 16px;
+    }
+
+    /* FEATURES */
+    section {
+      padding: 60px 40px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h3 {
+      font-size: 32px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h4 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* DASHBOARD SECTION */
+    .dashboard {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 30px;
+    }
+
+    .sidebar {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .sidebar li:hover {
+      background: var(--bg);
+    }
+
+    .content {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: #d1d5db;
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>MySite</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h2>Build Clean & Modern Websites</h2>
+      <p>
+        This is a more complex HTML + CSS layout with navigation,
+        grid systems, cards, and responsive design.
+      </p>
+      <button>Get Started</button>
+    </div>
+    <div class="hero-box"></div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h3>Features</h3>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h4>Responsive</h4>
+        <p>Looks great on desktop, tablet, and mobile screens.</p>
+      </div>
+      <div class="card">
+        <h4>Modern UI</h4>
+        <p>Uses grid, flexbox, shadows, and smooth spacing.</p>
+      </div>
+      <div class="card">
+        <h4>Clean Code</h4>
+        <p>Easy to read, edit, and expand later.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h3>Dashboard Layout</h3>
+    </div>
+
+    <div class="dashboard">
+      <aside class="sidebar">
+        <ul>
+          <li>Overview</li>
+          <li>Analytics</li>
+          <li>Settings</li>
+          <li>Profile</li>
+        </ul>
+      </aside>
+
+      <div class="content">
+        <h4>Welcome Back</h4>
+        <p>
+          This section mimics a dashboard-style layout.
+          You can add charts, tables, or forms here.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 MySite — Built with HTML & CSS
+  </footer>
+
+</body>
+</html>
