@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYCORE 2026 - Student Projects Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .project-card h2 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .project-card .folder-name {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #764ba2;
+            font-weight: 600;
+        }
+
+        .no-projects {
+            text-align: center;
+            color: white;
+            font-size: 1.3rem;
+            padding: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding: 20px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 TYCORE 2026</h1>
+            <p>Student Projects Portal</p>
+        </header>
+
+        <div id="projectsContainer" class="projects-grid">
+            <!-- Projects will be loaded here by JavaScript -->
+        </div>
+
+        <footer>
+            <p>&copy; 2026 TYCORE - All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script>
+        // ============================================
+        // STUDENTS: ADD YOUR PROJECT HERE
+        // ============================================
+        // Copy the example below and add your project details:
+        // {
+        //     name: 'Your Name',
+        //     folder: 'Your-Folder-Name',
+        //     description: 'Brief description of your project'
+        // },
+        
+        const projects = [
+            // Example projects (you can remove these and add your own)
+            {
+                name: 'Coffee Shop',
+                folder: 'Coffee-Shop',
+                description: 'A beautiful coffee shop website showcasing menu items and services'
+            },
+            {
+                name: 'Shlok Bajaj',
+                folder: 'Shlok-Bajaj',
+                description: 'Personal portfolio and project showcase'
+            }
+            // Add your project above this line
+        ];
+
+        // ============================================
+        // DO NOT MODIFY THE CODE BELOW
+        // ============================================
+        
+        function loadProjects() {
+            const container = document.getElementById('projectsContainer');
+            
+            if (projects.length === 0) {
+                container.innerHTML = '<div class="no-projects">No projects yet. Be the first to add yours!</div>';
+                return;
+            }
+
+            container.innerHTML = '';
+            
+            projects.forEach(project => {
+                const card = document.createElement('a');
+                card.className = 'project-card';
+                card.href = `./${project.folder}/index.html`;
+                
+                card.innerHTML = `
+                    <h2>${project.name}</h2>
+                    <p>${project.description}</p>
+                    <span class="folder-name">${project.folder}</span>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Load projects when page loads
+        window.addEventListener('DOMContentLoaded', loadProjects);
+    </script>
+</body>
+</html>
