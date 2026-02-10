@@ -94,6 +94,7 @@ nav {
   font-size: 1.5rem;
   font-weight: 800;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.5px;
@@ -137,6 +138,7 @@ nav {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
   background: linear-gradient(to right, var(--text-main), var(--primary));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
