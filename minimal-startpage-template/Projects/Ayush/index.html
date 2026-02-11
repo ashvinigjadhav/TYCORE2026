@@ -1,0 +1,292 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee House</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f2ed;
+    color:#333;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    background:#3b2a1f;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+nav h2{
+    color:#fff;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#d4a373;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.btn{
+    padding:12px 25px;
+    background:#d4a373;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    font-size:15px;
+}
+
+/* SECTION */
+section{
+    padding:80px 8%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:32px;
+    color:#3b2a1f;
+}
+
+/* MENU */
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.menu-card{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.menu-card img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.menu-card h3{
+    margin-bottom:8px;
+}
+
+.price{
+    color:#d4a373;
+    font-weight:bold;
+}
+
+/* ABOUT */
+.about{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* CONTACT */
+form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input, textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+footer{
+    background:#3b2a1f;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* MOBILE */
+.menu-toggle{
+    display:none;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+    nav ul{
+        position:absolute;
+        top:60px;
+        right:0;
+        background:#3b2a1f;
+        width:200px;
+        flex-direction:column;
+        display:none;
+        padding:20px;
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>CoffeeHouse</h2>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu-section">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero" id="home">
+    <div>
+        <h1>Fresh Coffee Everyday</h1>
+        <p>Experience the taste of premium coffee</p>
+        <button class="btn">Order Now</button>
+    </div>
+</section>
+
+<section id="menu-section">
+    <div class="title">
+        <h2>Our Menu</h2>
+    </div>
+
+    <div class="menu-grid">
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+            <h3>Espresso</h3>
+            <p class="price">₹120</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735">
+            <h3>Cappuccino</h3>
+            <p class="price">₹180</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1523942839745-7848d8c2c1c0">
+            <h3>Latte</h3>
+            <p class="price">₹200</p>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+            <h3>Mocha</h3>
+            <p class="price">₹220</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="title">
+        <h2>About Us</h2>
+    </div>
+
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31">
+        <p>
+            CoffeeHouse serves freshly brewed coffee made from high-quality beans.
+            Our goal is to create a comfortable space where people can relax,
+            work, and enjoy great coffee with friends.
+        </p>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="title">
+        <h2>Contact Us</h2>
+    </div>
+
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Message"></textarea>
+        <button class="btn">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 CoffeeHouse. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
+```
