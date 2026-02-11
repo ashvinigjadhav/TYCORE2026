@@ -1,41 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TYCORE 2026 - Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=minimal-startpage-template/index.html">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            margin: 0;
-        }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        a {
-            color: white;
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amine</title>
+  <link rel="stylesheet" href="stayle.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <h1>🎓 Redirecting to TYCORE 2026 Projects...</h1>
-        <p>If not redirected, <a href="minimal-startpage-template/index.html">click here</a></p>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo"><span>a</span>mine<span class="logo-s">.</span></h1>
+      <nav class="nav-list">
+        <ul class="ul-list">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+      <div class="box-icons">
+        <p><i class='bx bxl-youtube'></i></p>
+        <p><i class='bx bxl-github'></i></p>
+        <p><i class='bx bxl-linkedin-square'></i></p>
+      </div>
     </div>
-    
-    <script>
-        // Immediate redirect
-        window.location.href = 'minimal-startpage-template/index.html';
-    </script>
+  </header>
+
+  <section class="home" id="home">
+    <div class="container-home">
+      <img class="avatar" src="images/img.jpg" alt="avatar">
+      <div class="text-home">
+        <h4>Hi I'm Amine user 👾</h4>
+        <h2>Frontend Developer</h2>
+        <h2 class="h2-home">Based in Algeria</h2>
+        <p class="p-home">I'm Amine Hamzaoui, a passionate Software Developer who enjoys understanding  <br> how systems work — from low-level logic circuits to high-level applications.</p>
+      </div>
+      <div class="butn-hom">
+        <button class="btn btn-home1">Contact me</button>
+        <button class="btn btn-home2">My work</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section" id="about">
+    <h1 class="section-title">Hello, There 👋</h1>
+    <div class="info-cards">
+      <div class="card">
+        <h1>Hi there, I'm Amine</h1>
+        <p>With 2 years of experience, I have honed my skills in both frontend and backend development, creating dynamic and responsive websites.</p>
+        <img src="images/grid1.png" alt="">
+      </div>
+
+      <div class="card">
+        <h1>Tech Stack</h1>
+        <p>I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications.</p>
+        <img src="images/grid2.png" alt="">
+      </div>
+
+      <div class="card">
+        <h1>I’m flexible with time zones & locations</h1>
+        <p>I'm based in Algeria and open to remote work worldwide.</p>
+        <video src="video/glob.mp4" autoplay loop muted playsinline></video>
+        <button><i class='bx bx-send'></i> Contact Me</button>
+      </div>
+
+      <div class="card">
+        <h1>My Passion for Coding</h1>
+        <p>I love solving problems and building things through code. Programming isn't just my profession—it's my passion.</p>
+        <img src="images/grid4.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="my-project" id="projects">
+    <h1 class="section-title">My Projects 👨‍💻</h1>
+
+    <div class="project-card">
+      <div class="project-vidbox">
+        <video loop muted src="video/project1.mp4"></video>
+        <div class="hover-sign"></div>
+      </div>
+      <div class="project-info">
+        <h1>Animated <span class="gradient">Gaming</span> Website</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ipsam excepturi ex corrupti similique dolor nam, suscipit soluta at recusandae nulla.</p>
+        <button><i class='bx bx-link-external'></i> Website</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-vidbox">
+        <video loop muted src="video/project2.mp4"></video>
+        <div class="hover-sign"></div>
+      </div>
+      <div class="project-info">
+        <h1>Modern <span class="gradient">Portfolio</span> Website</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam modi voluptates assumenda omnis impedit veritatis soluta earum minima consequatur.</p>
+        <button><i class='bx bx-link-external'></i> Website</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-vidbox">
+        <video loop muted src="video/project3.mp4"></video>
+        <div class="hover-sign"></div>
+      </div>
+      <div class="project-info">
+        <h1>Movie <span class="gradient">Landing</span> Page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores numquam saepe sapiente odit necessitatibus explicabo hic laudantium ipsam ducimus.</p>
+        <button><i class='bx bx-link-external'></i> Website</button>
+      </div>
+    </div>
+  </section>
+  <!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-container">
+    <h2 class="footer-logo">Amine</h2>
+
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+    </div>
+
+    <div class="footer-socials">
+        <p><i class='bx bxl-youtube'></i></p>
+        <p><i class='bx bxl-github'></i></p>
+        <p><i class='bx bxl-linkedin-square'></i></p>
+    </div>
+
+    <p class="footer-copy">© 2025 Amine | All Rights Reserved</p>
+  </div>
+</footer>
+  <script src="main.js"></script>
 </body>
 </html>
