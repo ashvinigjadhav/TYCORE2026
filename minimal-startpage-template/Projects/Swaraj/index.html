@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Alert</title>
+    <style>
+        body {
+            background-color: #0b0b0b;
+            color: #ff3b3b;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 60px;
+        }
+        .box {
+            border: 3px solid red;
+            padding: 30px;
+            width: 420px;
+            margin: auto;
+            background-color: #111;
+            box-shadow: 0 0 20px red;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .scan {
+            color: #00ffcc;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .warning {
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>⚠ SECURITY ALERT ⚠</h1>
+    <p>Your system is being scanned for threats...</p>
+
+    <div class="scan" id="scanText">Initializing scan...</div>
+
+    <div class="warning" id="result"></div>
+
+    <div class="footer">
+        ⚠ This is a FAKE virus alert for DEMO / EDUCATIONAL use only
+    </div>
+</div>
+
+<script>
+    // SAFE DEMO SCRIPT — DOES NOT HARM OR COLLECT DATA
+
+    const messages = [
+        "Scanning system files...",
+        "Checking browser memory...",
+        "Analyzing network activity...",
+        "Detecting suspicious behavior...",
+        "Scan complete."
+    ];
+
+    let index = 0;
+    const scanText = document.getElementById("scanText");
+    const result = document.getElementById("result");
+
+    const interval = setInterval(() => {
+        scanText.textContent = messages[index];
+        index++;
+
+        if (index === messages.length) {
+            clearInterval(interval);
+            result.innerHTML = "❌ 3 Threats Detected<br>⚠ Immediate Action Required";
+        }
+    }, 1200);
+</script>
+
+</body>
+</html>
