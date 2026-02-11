@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Portfolio</title>
+
+<style>
+/* -------------------
+   BASIC RESET
+------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* -------------------
+   BODY
+------------------- */
+body {
+  background: #f7f7f7;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+/* -------------------
+   NAVBAR
+------------------- */
+nav {
+  position: fixed;
+  width: 100%;
+  background: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+/* -------------------
+   SECTIONS
+------------------- */
+section {
+  min-height: 100vh;
+  padding: 120px 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* -------------------
+   HERO
+------------------- */
+#home h1 {
+  font-size: 3rem;
+}
+
+#home span {
+  color: #007bff;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 22px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* -------------------
+   PROJECTS
+------------------- */
+.project-box {
+  background: white;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+/* -------------------
+   FOOTER
+------------------- */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #111;
+  color: white;
+}
+
+/* -------------------
+   MOBILE
+------------------- */
+@media(max-width:768px){
+  section {
+    padding: 120px 8%;
+  }
+
+  #home h1 {
+    font-size: 2.2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>Vansh</h2>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <h1>Hi, I'm <span>Vansh</span> 👋</h1>
+  <p>A beginner web developer learning HTML, CSS & JavaScript.</p>
+  <button onclick="scrollToSection('projects')">View My Work</button>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h1>Projects</h1>
+
+  <div class="project-box">
+    <h3>Portfolio Website</h3>
+    <p>Simple responsive portfolio using HTML, CSS and JS.</p>
+  </div>
+
+  <div class="project-box">
+    <h3>To-Do App</h3>
+    <p>Basic task manager built with JavaScript.</p>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h1>Contact Me</h1>
+  <p>Email: vansh@example.com</p>
+  <p>LinkedIn: linkedin.com/in/vansh</p>
+</section>
+
+<footer>
+  <p>© 2026 Vansh. All rights reserved.</p>
+</footer>
+
+<script>
+/* -------------------
+   JAVASCRIPT
+------------------- */
+
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({
+    behavior: "smooth"
+  });
+}
+</script>
+
+</body>
+</html>
