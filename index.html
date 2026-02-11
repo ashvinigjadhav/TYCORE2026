@@ -1,41 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TYCORE 2026 - Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=minimal-startpage-template/index.html">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Jay Dhakad — Profile</title>
+    <meta name="description" content="Personal profile: Cybersecurity, Figma, Photography, and part-time support for family business." />
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            margin: 0;
+        /* Load local Roboto if available */
+        @font-face {
+            font-family: 'RobotoLocal';
+            src: url('minimal-startpage-template/fonts/Roboto-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
         }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+        @font-face {
+            font-family: 'RobotoLocal';
+            src: url('minimal-startpage-template/fonts/Roboto-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
         }
-        a {
-            color: white;
-            text-decoration: underline;
+
+        :root{
+            --bg1:#0f172a; /* slate-900 */
+            --bg2:#0b1220;
+            --accent:#66ccff;
+            --accent-2:#9b5cff;
+            --muted:rgba(255,255,255,0.75);
+            --card:#0f172a;
+            --glass: rgba(255,255,255,0.03);
         }
+
+        *{box-sizing:border-box}
+        html,body{height:100%;margin:0;font-family: RobotoLocal, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#e6eef8;background:linear-gradient(120deg,var(--bg1),var(--bg2) 60%);}
+
+        .container{max-width:1100px;margin:40px auto;padding:28px}
+
+        header{display:flex;align-items:center;gap:18px}
+        .avatar{width:110px;height:110px;border-radius:18px;flex:0 0 110px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#07203a;font-weight:700;font-size:28px;box-shadow:0 8px 30px rgba(15,20,42,0.6);transform:translateZ(0);}
+
+        .hero{flex:1}
+        .name{font-size:28px;margin:0}
+        .tag{color:var(--muted);margin:6px 0 12px}
+        .actions{display:flex;gap:10px}
+        .btn{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:10px 14px;border-radius:10px;color:white;text-decoration:none;display:inline-flex;gap:8px;align-items:center;transition:all .28s;backdrop-filter: blur(4px)}
+        .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#062134;border:0;box-shadow:0 8px 24px rgba(99,102,241,0.12);}
+        .btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+
+        main{margin-top:26px;display:grid;grid-template-columns:1fr 360px;gap:22px}
+
+        /* Left column */
+        .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(2,6,23,0.6);overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+        .about p{color:var(--muted);line-height:1.6}
+
+        /* Skills */
+        .skills{display:flex;flex-direction:column;gap:12px}
+        .skill{display:flex;justify-content:space-between;align-items:center}
+        .skill .bar{flex:1;height:10px;background:var(--glass);border-radius:8px;margin-left:12px;overflow:hidden}
+        .skill .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width 1s cubic-bezier(.2,.9,.2,1)}
+
+        /* Portfolio / gallery */
+        .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+        .grid .item{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));height:90px;border-radius:8px;display:flex;align-items:flex-end;padding:8px;color:white;font-weight:600;transition:transform .28s,box-shadow .28s;cursor:pointer}
+        .grid .item:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(9,10,14,0.6)}
+
+        /* Right column */
+        aside .meta{display:grid;gap:12px}
+        .pill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;font-weight:600}
+        .contact a{color:var(--accent);text-decoration:none}
+
+        footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+
+        /* Subtle floating animation */
+        .float{animation:float 6s ease-in-out infinite}
+        @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+        /* Responsive */
+        @media (max-width:900px){main{grid-template-columns:1fr}aside{order:2}header{flex-direction:row} .grid{grid-template-columns:repeat(2,1fr)} }
+
+        /* Accent link hover */
+        a.social{display:inline-flex;gap:8px;align-items:center;color:var(--muted);transition:color .2s}
+        a.social:hover{color:var(--accent)}
     </style>
 </head>
 <body>
-    <div>
-        <h1>🎓 Redirecting to TYCORE 2026 Projects...</h1>
-        <p>If not redirected, <a href="minimal-startpage-template/index.html">click here</a></p>
+    <div class="container">
+        <header>
+                    <div class="avatar float" id="avatar">JD</div>
+                    <div class="hero">
+                        <h1 class="name">Jay Dhakad — Cybersecurity · Figma · Photography</h1>
+                        <div class="tag">Cybersecurity practitioner · Figma designer · Photographer · Part-time support for family business</div>
+                        <div class="actions">
+                            <a class="btn primary" href="#contact">Hire / Contact</a>
+                            <a class="btn" id="downloadResume" href="./Jay Dhakad CV .pdf" target="_blank" rel="noopener">Download Resume</a>
+                        </div>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="card about">
+                    <h2>About</h2>
+                    <p>Hello — I'm a hands-on generalist who loves security, design, and photography. I help my family run a small business outside of full-time studies, and I enjoy solving real problems with practical tools. I blend visual thinking from Figma with technical rigor from cybersecurity and a creative eye from photography.</p>
+
+                    <h3 style="margin-top:16px">What I do</h3>
+                    <div class="skills">
+                        <div class="skill"><strong>Cybersecurity</strong><div class="bar" data-value="82"><i></i></div></div>
+                        <div class="skill"><strong>Figma / UI</strong><div class="bar" data-value="78"><i></i></div></div>
+                        <div class="skill"><strong>Photography</strong><div class="bar" data-value="70"><i></i></div></div>
+                        <div class="skill"><strong>Business Operations</strong><div class="bar" data-value="65"><i></i></div></div>
+                    </div>
+
+                    <h3 style="margin-top:16px">Portfolio</h3>
+                    <div class="grid" id="portfolio">
+                        <!-- Using styled placeholders so page is self-contained -->
+                        <div class="item" data-title="Concept UI" style="background:linear-gradient(135deg,#7dd3fc,#60a5fa)">Figma Concept</div>
+                        <div class="item" data-title="Pentest Notes" style="background:linear-gradient(135deg,#a78bfa,#f472b6)">Security</div>
+                        <div class="item" data-title="Street Photo" style="background:linear-gradient(135deg,#f97316,#f59e0b)">Photography</div>
+                        <div class="item" data-title="Shopfront" style="background:linear-gradient(135deg,#34d399,#10b981)">Business</div>
+                        <div class="item" data-title="Logo" style="background:linear-gradient(135deg,#60a5fa,#a78bfa)">Branding</div>
+                        <div class="item" data-title="Workflow" style="background:linear-gradient(135deg,#fb7185,#f97316)">Process</div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:14px;display:flex;gap:12px;align-items:center;justify-content:space-between">
+                    <div>
+                        <h3 style="margin:0">Selected Services</h3>
+                        <div style="color:var(--muted);margin-top:6px">Cybersecurity reviews · Figma mockups · Photography for products/events · Part-time business support</div>
+                    </div>
+                    <div style="text-align:right">
+                        <div class="pill">Available for hire</div>
+                        <div style="color:var(--muted);font-size:13px;margin-top:8px">Hourly & project work</div>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-top:14px">
+                    <h3 style="margin:0 0 10px 0">Resume (embedded)</h3>
+                    <div style="color:var(--muted);margin-bottom:10px">If your browser supports PDF viewing, the CV below will load. You can also use the Download Resume button.</div>
+                    <iframe src="./Jay Dhakad CV .pdf" title="Jay Dhakad CV" style="width:100%;height:520px;border:0;border-radius:8px;overflow:hidden;background:white"></iframe>
+                </div>
+            </section>
+
+            <aside>
+                <div class="card meta">
+                    <h3>Quick Info</h3>
+                    <div style="display:flex;flex-direction:column;gap:8px">
+                        <div><span class="pill">Location</span> <div style="color:var(--muted);margin-top:6px">Your City, Country</div></div>
+                        <div><span class="pill">Availability</span> <div style="color:var(--muted);margin-top:6px">Part-time / Projects</div></div>
+                        <div><span class="pill">Rate</span> <div style="color:var(--muted);margin-top:6px">Discuss per project</div></div>
+                    </div>
+
+                    <h4 style="margin-top:10px">Contact</h4>
+                                <div class="contact" style="color:var(--muted)" id="contact">
+                                    <div>Resume & contact details are available in the attached CV:</div>
+                                    <div style="margin-top:8px"><a href="./Jay%20Dhakad%20CV%20.pdf" style="color:var(--accent);text-decoration:underline">View / Download Jay Dhakad CV</a></div>
+                                </div>
+
+                    <h4 style="margin-top:10px">Social</h4>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap">
+                        <a class="social" href="#" aria-label="GitHub">🔗 GitHub</a>
+                        <a class="social" href="#" aria-label="LinkedIn">🔗 LinkedIn</a>
+                        <a class="social" href="#" aria-label="Instagram">🔗 Instagram</a>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            Built with care • Replace placeholders with your real info
+        </footer>
     </div>
-    
+
     <script>
-        // Immediate redirect
-        window.location.href = 'minimal-startpage-template/index.html';
+        // Animate skill bars on load
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.bar').forEach(el => {
+                const value = Number(el.getAttribute('data-value') || 60);
+                const inner = el.querySelector('i');
+                setTimeout(() => inner.style.width = value + '%', 200);
+            });
+
+            // Hover interactions for portfolio items
+            document.querySelectorAll('#portfolio .item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const title = item.getAttribute('data-title') || item.textContent;
+                    alert(title + '\n\nThis is a placeholder — replace with a project page or modal.');
+                });
+            });
+
+            // Avatar follows mouse a bit for subtle parallax
+            const avatar = document.getElementById('avatar');
+            document.addEventListener('mousemove', (e) => {
+                const rect = avatar.getBoundingClientRect();
+                const dx = (e.clientX - (rect.left + rect.width/2)) / 30;
+                const dy = (e.clientY - (rect.top + rect.height/2)) / 30;
+                avatar.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+            });
+
+            // Download resume now uses the direct PDF link (no JS interception)
+        });
     </script>
 </body>
 </html>
