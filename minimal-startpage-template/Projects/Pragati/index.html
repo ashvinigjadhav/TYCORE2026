@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Coffee Stop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f1e4;
+            transition: background-color 0.5s ease;
+        }
+
+        header {
+            background-color: #6f4e37;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #9c7b56;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-item {
+            margin: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            width: 200px;
+            background-color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #6f4e37;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #1e1e1e;
+            color: white;
+        }
+
+        .dark-mode header,
+        .dark-mode footer {
+            background-color: #333;
+        }
+
+        .dark-mode nav {
+            background-color: #444;
+        }
+
+        .dark-mode .menu-item {
+            background-color: #2c2c2c;
+            color: white;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            padding: 8px 12px;
+            background: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Welcome to The Coffee Stop</h1>
+    <p>Bringing people together, one cup at a time!</p>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Mode</button>
+</header>
+
+<nav>
+    <a onclick="scrollToSection('menu')">Menu</a>
+    <a onclick="scrollToSection('about')">About Us</a>
+    <a onclick="scrollToSection('contact')">Contact</a>
+</nav>
+
+<div class="container" id="menu">
+    <h2>Handcrafted Curations</h2>
+
+    <div class="menu-item" onclick="orderItem('Bestseller')">
+        <img src="images/Bestseller.webp" alt="Bestseller">
+        <h3>Bestseller</h3>
+        <p>$3.00</p>
+    </div>
+
+    <div class="menu-item" onclick="orderItem('Drinks')">
+        <img src="images/Drinks.webp" alt="Drinks">
+        <h3>Drinks</h3>
+        <p>$4.50</p>
+    </div>
+
+    <div class="menu-item" onclick="orderItem('Merchandise')">
+        <img src="images/Merchandise.webp" alt="Merchandise">
+        <h3>Merchandise</h3>
+        <p>$4.00</p>
+    </div>
+
+    <div class="menu-item" onclick="orderItem('Coffee At Home')">
+        <img src="images/CoffeeAtHome.webp" alt="Coffee At Home">
+        <h3>Coffee At Home</h3>
+        <p>$5.00</p>
+    </div>
+</div>
+
+<div class="container" id="about">
+    <h2>About Us</h2>
+    <p>
+        At The Coffee Stop, we believe coffee is more than just a drink —
+        it's an experience. Enjoy our warm ambiance and freshly brewed happiness!
+    </p>
+    <img src="images/interior.jpg" alt="Coffee Shop Interior">
+</div>
+
+<div class="container" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: pragati@thecoffeestop.com</p>
+    <p>Phone: +91 8600915556</p>
+    <p>Address: 123 Coffee Lane, Bean Town</p>
+    <img src="images/exterior.jpg" alt="Coffee Shop Exterior">
+</div>
+
+<footer>
+    <p>&copy; <span id="year"></span> The Coffee Stop. All rights reserved.</p>
+</footer>
+
+<script>
+    // Dark Mode Toggle
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+
+    // Smooth Scroll
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+
+    // Order Alert
+    function orderItem(itemName) {
+        alert("You selected: " + itemName + " ☕");
+    }
+
+    // Auto Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
