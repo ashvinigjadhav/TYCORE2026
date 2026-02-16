@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samruddhi Deshpande | Portfolio</title>
+
+    <!-- CSS INSIDE HTML -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* Navbar */
+        header {
+            background: #222;
+            padding: 15px 0;
+        }
+
+        nav {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #00adb5;
+        }
+
+        /* Home Section */
+        .home {
+            height: 90vh;
+            background: linear-gradient(120deg, #00adb5, #393e46);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .home h1 {
+            font-size: 40px;
+        }
+
+        .home span {
+            color: #ffd369;
+        }
+
+        .home p {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            background: #ffd369;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .skills-container span {
+            background: #00adb5;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 20px;
+        }
+
+        /* Projects */
+        .project {
+            background: white;
+            width: 60%;
+            margin: 15px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Contact */
+        #contact p {
+            margin: 10px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <h2 class="logo">Samruddhi</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section id="home" class="home">
+        <h1>Hello, I'm <span>Samruddhi Deshpande</span></h1>
+        <p>Aspiring Web Developer</p>
+        <a href="#contact" class="btn">Hire Me</a>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am Samruddhi Deshpande, a passionate web developer interested in
+            creating clean, responsive, and user-friendly websites using HTML and CSS.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Git & GitHub</span>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>Personal portfolio built using HTML & CSS</p>
+        </div>
+        <div class="project">
+            <h3>E-Commerce Website</h3>
+            <p>Frontend shopping website with product & cart pages</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: samruddhi@email.com</p>
+        <p>Phone: +91 XXXXXXXXXX</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Samruddhi Deshpande | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
