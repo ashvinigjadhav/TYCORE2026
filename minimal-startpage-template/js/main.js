@@ -1,7 +1,7 @@
 /**
  * Interval which the clock will be updated (in milliseconds).
  */
-const clockInterval = 100;
+const clockInterval = 1000;
 
 /**
  * Search engine query url
@@ -11,32 +11,35 @@ const searchEngineUrl = 'https://duckduckgo.com/?q=';
 const tabKeyCode = 9;
 const enterKeyCode = 13;
 const escapeKeyCode = 27;
-const searchBarElement = document.getElementById('search-bar');
-const clockElement = document.getElementById('clock');
-const formElement = document.getElementById('search-form');
+let searchBarElement;
+let clockElement;
+let formElement;
 
 /**
  * Return a string containing the formatted current date and time.
  */
 function getDateTime() {
-    const dateTime = new Date();
-    let day = dateTime.getDate();
-    let month = dateTime.getMonth() + 1;
-    let hour = dateTime.getHours();
-    let minutes = dateTime.getMinutes();
-    let seconds = dateTime.getSeconds();
-
-    if (hour < 0) {
-        hour = 24 + hour;
-    }
-
-    let date = (day < 10 ? '0' + day : day) + '/' + (month < 10 ? '0' + month : month) + '/' + dateTime.getFullYear();
-    let time = (hour < 10 ? '0' + hour : hour) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
+    const now = new Date();
+    const date = new Intl.DateTimeFormat('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    }).format(now);
+    const time = new Intl.DateTimeFormat('en-GB', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+    }).format(now);
 
     return date + '\n' + time;
 }
 
 function setClock() {
+    if (!clockElement) {
+        return;
+    }
+
     clockElement.innerText = getDateTime();
 }
 
@@ -54,25 +57,42 @@ function search() {
 }
 
 
-setClock();
+function initDashboard() {
+    searchBarElement = document.getElementById('search-bar');
+    clockElement = document.getElementById('clock');
+    formElement = document.getElementById('search-form');
 
-setInterval(() => {
     setClock();
-}, clockInterval);
+    setInterval(setClock, clockInterval);
 
-searchBarElement.focus();
-searchBarElement.value = '';
-
-formElement.addEventListener('submit', (ev) => {
-    ev.preventDefault();
-    search();
-});
-
-document.addEventListener('keypress', (event) => {
-    if (event.keyCode == escapeKeyCode) {
-        searchBarElement.blur();
-        searchBarElement.value = '';
-    } else if (event.keyCode != tabKeyCode && event.keyCode != enterKeyCode) {
+    if (searchBarElement) {
         searchBarElement.focus();
+        searchBarElement.value = '';
     }
-});
+
+    if (formElement) {
+        formElement.addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            search();
+        });
+    }
+
+    document.addEventListener('keypress', (event) => {
+        if (!searchBarElement) {
+            return;
+        }
+
+        if (event.keyCode == escapeKeyCode) {
+            searchBarElement.blur();
+            searchBarElement.value = '';
+        } else if (event.keyCode != tabKeyCode && event.keyCode != enterKeyCode) {
+            searchBarElement.focus();
+        }
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDashboard);
+} else {
+    initDashboard();
+}
